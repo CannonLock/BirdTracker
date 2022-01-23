@@ -1,0 +1,17 @@
+attrs==21.4.0
+iniconfig==1.1.1
+opencv-python==4.5.5.62
+packaging==21.3
+pluggy==1.0.0
+py==1.11.0
+pyparsing==3.0.7
+pytest==6.2.5
+toml==0.10.2
+keras==2.4.3
+numpy==1.19.3
+pillow==7.0.0
+scipy==1.4.1
+h5py==2.10.0
+matplotlib==3.3.2
+keras-resnet==0.2.0
+imageai

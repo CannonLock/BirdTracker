@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="a4d16f2e-0177-49d8-8162-1eaa266165fe" name="Home_BirdTracker">
+        <fileTransfer rootFolder="/home/clock/Python/bird_tracker" accessType="SFTP" host="home.cannonlock.com" port="3241" sshConfigId="07cf2992-4158-4405-863a-b32fcca01a1d" sshConfig="clock@home.cannonlock.com:3241 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
