@@ -1,6 +1,7 @@
 import cv2
 from imageai.Detection import ObjectDetection
 import os
+import glob
 import time
 import tempfile
 import subprocess
@@ -27,28 +28,24 @@ def log_birds(bird_count):
 def setup_detector():
   execution_path = os.getcwd()
   detector = ObjectDetection()
-  detector.setModelTypeAsYOLOv3()
-  detector.setModelPath(os.path.join(execution_path, "../../yolo-tiny.h5"))
+  detector.setModelTypeAsTinyYOLOv3()
+  detector.setModelPath(os.path.join(execution_path, "./yolo-tiny.h5"))
   detector.loadModel()
 
   return detector
 
 
-def process_picture(image_path):
-  output_image_path = tempfile.NamedTemporaryFile("w", suffix=".jpg")
-
+def process_picture(image_path, output_path):
   detector = setup_detector()
   custom_object = detector.CustomObjects(bird=True)
-  detections = detector.detectObjectsFromImage(custom_object=custom_object,
+  detections = detector.detectObjectsFromImage(custom_objects=custom_object,
                                                input_image=image_path,
-                                               output_image_path=output_image_path,
-                                               minimum_percentage_probability=90,
+                                               output_image_path=output_path,
+                                               minimum_percentage_probability=1,
                                                display_object_name=False)
 
-  log_birds(len(detections))
-
   if detections:
-    return output_image_path
+    return detections
 
 
 def take_image():
@@ -81,4 +78,3 @@ def main():
     time.sleep(10)
 
 
-process_picture("~/test.jpg")
