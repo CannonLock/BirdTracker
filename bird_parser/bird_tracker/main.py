@@ -28,7 +28,7 @@ def setup_detector():
   execution_path = os.getcwd()
   detector = ObjectDetection()
   detector.setModelTypeAsRetinaNet()
-  detector.setModelPath(os.path.join(execution_path, "../../retinanet_resnet50_fpn_coco-eeacb38b.pth"))
+  detector.setModelPath(os.path.join(execution_path, "./retinanet_resnet50_fpn_coco-eeacb38b.pth"))
   detector.loadModel()
 
   return detector
