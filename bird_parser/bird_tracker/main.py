@@ -7,7 +7,6 @@ import tempfile
 import subprocess
 from datetime import datetime, timezone
 
-
 def transfer_file(file, server_path):
   subprocess.run(["scp", file, server_path])
 
@@ -28,8 +27,8 @@ def log_birds(bird_count):
 def setup_detector():
   execution_path = os.getcwd()
   detector = ObjectDetection()
-  detector.setModelTypeAsTinyYOLOv3()
-  detector.setModelPath(os.path.join(execution_path, "./yolo-tiny.h5"))
+  detector.setModelTypeAsRetinaNet()
+  detector.setModelPath(os.path.join(execution_path, "../../retinanet_resnet50_fpn_coco-eeacb38b.pth"))
   detector.loadModel()
 
   return detector
